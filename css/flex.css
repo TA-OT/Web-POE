@@ -1,0 +1,72 @@
+body{
+    background-color: rgb(red, green, blue);
+    color: aquamarine;
+}
+
+/* the container holds all of our columns! */
+.container{
+    /*this makes apply all the items in the container flexible , meaning they can move*/
+    display: flex;
+    /*we then apply a justifications to the content,ensuring it takes up the whole screen,we use the space-between option,
+    meaning it adjusts the space between the objects to ebsure everything fits well */
+    justify-content: space-between;
+
+    align-items: flex-start;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+
+}
+.column {
+    background-color: rgb(red, green, blue);
+    padding: 20px;
+    border-radius: 8px;
+    /*shadow spread offset for x and y (where to start the start the shadow), color*/
+    box-shadow: 0 4px 8px rgb(red, green, blue);
+    flex: 1;
+    /*this is to ensure that there is enough space between where the column starts and the content starts*/
+    margin: 0 10px;
+
+}
+.lefr{
+    background-color: blueviolet;
+}
+
+.center{
+    background-color: chartreuse;
+    flex: 2;
+}
+
+.right{
+    background-color: darkslateblue;
+}
+
+.column:hover{
+    /*in this case we made the shadow bother larger and brighter*/
+    box-shadow: 0 6px 16px rgb(red, green, blue);
+}
+/*if the size of the screen gets to small*/
+@media (max-width:768px){
+    /*we tell the column container to stack vertically*/
+    container{
+        flex-direction: column;
+    }
+
+    /* add spacing between the top of the next column*/
+    .column{
+        margin: 10px 0;
+    }
+}
+@media (min-width:768px) and (max-width:102px){
+    .container{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .left.right{
+        flex: 1;
+    }
+    .center{
+        flex: 2;
+    }
+}
+    
