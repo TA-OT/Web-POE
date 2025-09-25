@@ -1,0 +1,44 @@
+/*here we set styling info for everything inside the body tag of a page */
+
+body{
+    background: #6f3d70;
+    font-family: Comic Sans MS;
+    text-align: center;
+    align-items: center;
+    text-shadow: 2px 2px 4px lightskyblue;
+}
+h1,h2,h3{
+    color: #6f3d70;
+}
+@media screen and (max-height:123px){
+
+    body{
+        font-size: 22px;
+        background-color: aqua;
+    } 
+}
+
+
+table
+th,
+  tr{
+    border: 2px solid blue;
+    border-collapse: collapse;
+  }
+
+  table{
+    box-shadow: 2px 2px 2px palevioletred;
+  }
+
+  /*the # denotes that we are talking about a specific element,with the name provide */
+  header{
+    color:aquamarine
+  }
+
+  .subheadings{
+    color: #6f3d70;
+    font-family: "Wingdings";
+  }
+  .links{
+    color: aqua;
+  }
