@@ -8,38 +8,218 @@ body{
     align-items: center;
     text-shadow: 2px 2px 4px lightskyblue;
 }
-h1,h2,h3{
-    color: #6f3d70;
+:root {
+  --color-bg: #f8f7fb;
+  --color-text: #2c2c2c;
+  --color-primary: #6f3d70;
+  --color-secondary: #b76eb8;
+  --color-accent: #6ec1e4;
+  --color-border: #e2a9e5;
+  --font-heading: "Poppins", sans-serif;
+  --font-body: "Open Sans", sans-serif;
+  --max-width: 1200px;
 }
-@media screen and (max-height:123px){
 
-    body{
-        font-size: 22px;
-        background-color: aqua;
-    } 
+/* Dark mode automatically enabled if user prefers dark color scheme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #1d1b1e;
+    --color-text: #f1e8f4;
+    --color-primary: #c27cc2;
+    --color-secondary: #8b4f8f;
+    --color-accent: #78c7ec;
+    --color-border: #5e3b5e;
+  }
 }
 
 
-table
-th,
-  tr{
-    border: 2px solid blue;
-    border-collapse: collapse;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  min-height: 100vh;
+  padding: 2rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+p {
+  margin-bottom: 1rem;
+  max-width: 700px;
+}
+
+
+header {
+  color: var(--color-primary);
+  width: 100%;
+  max-width: var(--max-width);
+  padding: 1rem;
+  border-bottom: 2px solid var(--color-border);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+
+table {
+  border-collapse: collapse;
+  margin: 1.5rem auto;
+  width: 90%;
+  max-width: 800px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  table {
+    background-color: #2b262c;
+  }
+}
+
+th, td {
+  border: 2px solid var(--color-border);
+  padding: 0.75rem 1rem;
+  text-align: center;
+}
+
+th {
+  background-color: var(--color-primary);
+  color: #fff;
+  font-weight: 600;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(111, 61, 112, 0.05);
+}
+
+@media (prefers-color-scheme: dark) {
+  tr:nth-child(even) {
+    background-color: rgba(194, 124, 194, 0.15);
+  }
+}
+
+tr:hover {
+  background-color: var(--color-accent);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+
+.subheadings {
+  color: var(--color-secondary);
+  font-family: var(--font-heading);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.links {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+
+footer {
+  margin-top: auto;
+  padding: 1rem;
+  width: 100%;
+  text-align: center;
+  background-color: var(--color-primary);
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+
+@media screen and (max-width: 992px) {
+  body {
+    font-size: 0.95rem;
+    padding: 1.5rem;
   }
 
-  table{
-    box-shadow: 2px 2px 2px palevioletred;
+  table {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 0.9rem;
+    padding: 1rem;
   }
 
-  /*the # denotes that we are talking about a specific element,with the name provide */
-  header{
-    color:aquamarine
+  h1 {
+    font-size: 1.8rem;
   }
 
-  .subheadings{
-    color: #6f3d70;
-    font-family: "Wingdings";
+  h2 {
+    font-size: 1.5rem;
   }
-  .links{
-    color: aqua;
+
+  table, th, td {
+    font-size: 0.85rem;
   }
+
+  th, td {
+    padding: 0.5rem;
+  }
+}
