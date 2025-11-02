@@ -1,46 +1,48 @@
 <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Make an enquiry about Ots Spark Wash services and pricing." />
+  <title>Enquiry | Ots Spark Wash</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="validation.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Service Enquiry</h1>
+  </header>
 
+  <section class="container">
+    <form id="enquiryForm" action="mailto:OtsSparkWash@gmail.com" method="post">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required><br/>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required><br/>
+
+      <label for="service">Select a Service:</label>
+      <select id="service" name="service" required>
+        <option value="">Choose one</option>
+        <option>Hand Wash</option>
+        <option>Automatic Drive-Through</option>
+        <option>Vacuum Interior Cleaning</option>
+        <option>Waxing and Polishing</option>
+        <option>Engine Bay Cleaning</option>
+      </select><br/>
+
+      <label for="message">Additional Notes:</label>
+      <textarea id="message" name="message" rows="4" placeholder="Type your enquiry here..." required></textarea><br/>
+
+      <button type="submit">Submit Enquiry</button>
+    </form>
+  </section>
+
+  <footer>
+    <a href="index.html">Home</a> |
+    <a href="about.html">About</a> |
+    <a href="services.html">Services</a> |
+    <a href="contact.html">Contact</a>
+  </footer>
+</body>
 </html>
-    <head>
-        <title>Ots Spark Wash</title>
-    </head>
-    <body>
-        <Enqury actions="mailto:OtsSparkWash@gmail.com">
-            <label for="Email">Enter email address:</label>
-            <input name="Email" type="text" id="Email" />
-            <br />
-
-            <label for="Full Name">Enter full name please:</label>
-            <input name="Full Name" type="text" id="Full Name" />
-            <br />
-
-            <label for="Car wash options">Which option do you want</label>
-            <select name="Options" id="Options" >
-                <option value="Hand Wash">Hand Wash</option>
-                <option value="Automatic drive-through">Automatic drive-through</option>
-                <option value="vacuuming interior cleaning">vacuuming interior cleaning</option>
-                <option value="Waxing and Polishing">Waxing and Polishing</option>
-                <option value="Engine Bay Cleaning">Engine Bay Cleaning</option>
-            </select>
-            <br />
-            <b> Your Interests?</b>
-            </br>
-            <label for="Interests">Extra Services</label>
-            <input name="Interests" id="Interests" type="Interests" type="Interests" value="what are your interests">
-
-            </br>
-            <label for="Interests">Price and Value for money</label>
-            <input name="Interests" id="Interests" type="Interests" type="Interests" value="what are your interests">
-
-           </br>
-           <label for="Interests">Speed and Convenience</label>
-            <input name="Interests" id="Interests" type="Interests" type="Interests" value="what are your interests">
-
-           </br>
-           <label for="Interests">Safety for the car</label>
-            <input name="Interests" id="Interests" type="Interests" type="Interests" value="what are your interests">
-
-            <input type="Submit" name="Submit" value="Complete form" >
-
-            </form>
-    </body>
